@@ -1,0 +1,27 @@
+esphome:
+  name: example # Should match the file name
+  platformio_options:
+    board_build.flash_mode: dio
+esp32:
+  board: esp32dev # adjust to match your hardware
+  framework:
+    type: esp-idf
+    platform_version: 6.4.0
+    version: 5.1.1
+wifi:
+  networks:
+  - ssid: "Your Wifi"
+    password: "Your WiFi password"
+  manual_ip:
+    static_ip: 192.168.1.149
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+    dns1: 192.168.1.1
+
+ota:
+  password: "your ota password"
+  unprotected_writes: True
+web_server:
+button:
+- platform: restart
+  name: Restart

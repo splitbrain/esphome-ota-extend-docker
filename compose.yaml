@@ -1,0 +1,6 @@
+services:
+  esphome:
+    build: .
+    container_name: esphome-extend-ota
+    volumes:
+      - ./config:/esphome-fork-extend_ota/config
